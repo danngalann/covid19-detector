@@ -20,7 +20,7 @@ args = vars(ap.parse_args())
 
 # grab all training image paths from the Kaggle X-ray dataset
 basePath = os.path.sep.join([args["kaggle"], "train", "NORMAL"])
-imagePaths = list(paths.list_images(args["kaggle"]))
+imagePaths = list(paths.list_images(basePath))
 
 # randomly sample the image paths
 random.seed(42)
