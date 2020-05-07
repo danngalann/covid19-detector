@@ -14,7 +14,7 @@ ap.add_argument("-k", "--kaggle", required=True,
 	help="path to base directory of Kaggle X-ray dataset")
 ap.add_argument("-o", "--output", required=True,
 	help="path to directory where 'normal' images will be stored")
-ap.add_argument("-s", "--sample", type=int, default=25,
+ap.add_argument("-s", "--sample", type=int, default=-1,
 	help="# of samples to pull from Kaggle dataset")
 args = vars(ap.parse_args())
 
@@ -25,7 +25,7 @@ imagePaths = list(paths.list_images(args["kaggle"]))
 # randomly sample the image paths
 random.seed(42)
 random.shuffle(imagePaths)
-imagePaths = imagePaths[:args["sample"]]
+imagePaths = imagePaths[:args["sample"]] if args["sample"] > -1 else imagePaths
 
 # loop over the image paths
 for (i, imagePath) in enumerate(imagePaths):
