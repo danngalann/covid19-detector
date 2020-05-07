@@ -1,7 +1,8 @@
 *.zip
-*.jpg
-*.png
-*.jpeg
-*.JPG
+dataset/*/*.jpg
+dataset/*/*.png
+dataset/*/*.jpeg
+dataset/*/*.JPG
+plot.png
 *.pickle
 model
